@@ -11,4 +11,12 @@ router.get('/', function(req, res, next) {
   res.send('Sum is: ' + sum);
 });
 
+
+router.get('/computation', function(req, res) {
+  const x = parseFloat(req.query.x) || Math.random(); // Use provided 'x' or generate a random value
+  const y = Math.exp(x);
+
+  res.send(`Math.exp() applied to ${x} is ${y}`);
+});
+
 module.exports = router;
